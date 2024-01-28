@@ -237,7 +237,7 @@ some online calculators don't have a special way to handle this exception.
 
 In the scope of this API, I decided that if the Future Value is bigger or equal than Current Pot Size then the goal is achieved so the regular monthly contributions needed are zero.
 
-### 4. Rounding in Financial Calculations
+#### 4. Rounding in Financial Calculations
 
 The application does not round the calculated values. The API returns precise results for calculations, prioritizing accuracy.
 
