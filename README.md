@@ -1,6 +1,6 @@
 # Savings Calculator
 
-A simple NestJS application for calculating the future value of a savings pot and determining the necessary monthly savings to reach a target pot size.
+A GraphQL API for calculating the future value of a savings pot and determining the necessary monthly savings to reach a target pot size.
 
 ## Installation
 
