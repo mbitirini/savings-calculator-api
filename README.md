@@ -243,4 +243,4 @@ The application does not round the calculated values. The API returns precise re
 
 ## Notes
 
-I've observed a slight variance in results compared to online calculators. Despite adhering closely to the provided formulas, discrepancies might arise from rounding or precision differences. I value precision and welcome feedback or guidance to align with expected results. Additionally, insights into rounding or precision conventions for this calculation would be appreciated.
+I've observed a slight variance in results compared to the online calculator provided by the resources. Despite adhering closely to the provided formulas, discrepancies might arise from rounding or precision differences. I value precision and welcome feedback or guidance to align with expected results. Additionally, insights into rounding or precision conventions for this calculation would be appreciated.
