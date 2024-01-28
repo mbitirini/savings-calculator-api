@@ -204,7 +204,7 @@ In order to complete this task though, I took roughly these decisions:
 
 ### Handling edge cases
 
-#### Annual Growth Rate is 0
+#### 1. Annual Growth Rate is 0
 
 When annual growth rate is 0, there is a risk of having a NaN (since we divide with 0). In order to handle this:
 
@@ -220,7 +220,7 @@ futureValue = currentPotSize + regularMonthlyContribution * 12 * numberOfYears
 regularMonthlyContribution = (futureValue - currentPotSize) / (12 * numberOfYears)
 ```
 
-#### Negative Result in Monthly Savings Amount
+#### 2. Negative Result in Monthly Savings Amount
 
 In some edge cases, when the
 monthly savings target is calculated the result is negative.
@@ -230,14 +230,14 @@ Typically, when calculating the necessary monthly savings, you would expect a po
 
 In the scope of this API, I decided that the implementation ensures that a negative result is treated as zero.
 
-#### Future Value is bigger or equal than Current Pot Size
+#### 3. Future Value is bigger or equal than Current Pot Size
 
 Again in the case of calculating the monthly savings target,
 some online calculators don't have a special way to handle this exception.
 
 In the scope of this API, I decided that if the Future Value is bigger or equal than Current Pot Size then the goal is achieved so the regular monthly contributions needed are zero.
 
-### Rounding in Financial Calculations
+### 4. Rounding in Financial Calculations
 
 The application does not round the calculated values. The API returns precise results for calculations, prioritizing accuracy.
 
