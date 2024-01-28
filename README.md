@@ -128,6 +128,7 @@ mutation {
 ```
 
 A successful calculation of Future Value would be:
+
 <img width="1389" alt="postmansuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/fea59ffd-7286-4347-87db-a7fd8bae6bf3">
 
 Example for Calculate Target Monthly Savings:
@@ -150,6 +151,7 @@ mutation {
 ```
 
 A successful calculation of the Target Monthly Savings would be:
+
 <img width="1325" alt="postmansuccess-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/b7590a04-cfff-498f-a103-aae4da824a98">
 
 ### Testing
