@@ -173,7 +173,6 @@ describe('SavingsService', () => {
     });
 
     it('should handle future value equal to current pot size and return 0 contribution', () => {
-      // Set up input with a future value equal to the current pot size
       const input: TargetMonthlySavingsInputDto = {
         currentPotSize: 1000,
         futureValue: 1000,

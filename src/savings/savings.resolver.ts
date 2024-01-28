@@ -10,13 +10,6 @@ import { SavingsService } from './savings.service';
 export class SavingsResolver {
   constructor(private readonly savingsService: SavingsService) {}
 
-  // This query is added to satisfy schema generation requirements.
-  // GraphQL schema generation often requires at least one query to be defined in the resolver.
-  @Query(() => String)
-  sayHello(): string {
-    return 'Hello World!';
-  }
-
   @Mutation(() => SavingsModel)
   async calculateFutureValue(
     @Args('input') input: CalculateFutureValueInputDto,
@@ -29,5 +22,12 @@ export class SavingsResolver {
     @Args('input') input: TargetMonthlySavingsInputDto,
   ) {
     return this.savingsService.calculateTargetMonthlySavings(input);
+  }
+
+  // This query is added to satisfy schema generation requirements.
+  // GraphQL schema generation often requires at least one query to be defined in the resolver.
+  @Query(() => String)
+  sayHello(): string {
+    return 'Hello World!';
   }
 }

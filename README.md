@@ -241,6 +241,10 @@ In the scope of this API, I decided that if the Future Value is bigger or equal 
 
 The application does not round the calculated values. The API returns precise results for calculations, prioritizing accuracy.
 
+#### 5. Error handling for incorrect variable types or inputs
+
+`class-validator` is used extensively in the DTO in order to ensure that the inputs have the valid type and are in the allowed range. If you try to put wrong type, value out of range or omit to put a variable necessary for this certain service, then an Error is thrown.
+
 ## Notes
 
 I've observed a slight variance in results compared to the online calculator provided by the resources. Despite adhering closely to the provided formulas, discrepancies might arise from rounding or precision differences. I value precision and welcome feedback or guidance to align with expected results. Additionally, insights into rounding or precision conventions for this calculation would be appreciated.
