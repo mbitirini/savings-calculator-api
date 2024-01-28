@@ -107,7 +107,7 @@ A successful calculation of the Target Monthly Savings would be:
 3. Click the "Send" button to make the request.
 4. Observe the response in the body of the Postman response panel.
 
-Example for Calculate Future Value:
+#### Calculate Future Value:
 
 ```
 mutation {
@@ -131,7 +131,7 @@ A successful calculation of Future Value would be:
 
 <img width="1389" alt="postmansuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/fea59ffd-7286-4347-87db-a7fd8bae6bf3">
 
-Example for Calculate Target Monthly Savings:
+#### Calculate Target Monthly Savings:
 
 ```
 mutation {
