@@ -136,7 +136,7 @@ mutation {
 
 ### Testing
 
-I have implemented unit testing (`savings.service.spec.ts`) for the services and an end-to-end test (savings.e2e-spec.ts) with basic implementation, in order to check that validators used in DTO work as expected.
+I have implemented unit testing (`savings.service.spec.ts`) for the services and an end-to-end test (`savings.e2e-spec.ts`) with basic implementation, in order to check that validators used in DTO work as expected.
 
 In order to run these tests:
 
