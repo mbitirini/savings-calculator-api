@@ -27,7 +27,7 @@ npm run start
 
 3. Try executing the provided mutations:
 
-- Calculate Future Value:
+#### Calculate Future Value:
 
 ```
 mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
@@ -55,7 +55,7 @@ and put on Query variables your desired inputs, for example:
 }
 ```
 
-- Calculate Target Monthly Savings:
+#### Calculate Target Monthly Savings:
 
 ```
 mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
