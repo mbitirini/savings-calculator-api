@@ -54,7 +54,8 @@ mutation {
 ```
 
 A successful calculation of Future Value would be:
-<img width="1439" alt="apollo-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/8c22493e-1b3f-49a6-b99b-228af4fb8866">
+
+<img width="1440" alt="apollo-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/795377bd-49db-49fc-8896-2b63e8f012ac">
 
 #### Calculate Target Monthly Savings:
 
@@ -76,7 +77,8 @@ mutation {
 ```
 
 A successful calculation of the Target Monthly Savings would be:
-<img width="1438" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/37913746-13e5-40d2-90c4-8c4d8ce08453">
+
+<img width="1434" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/2509b370-0821-4cdc-acdf-7f4cb5808ad9">
 
 ### Running the Application using Postman
 
@@ -92,13 +94,15 @@ A successful calculation of the Target Monthly Savings would be:
 
 A successful calculation of Future Value would be:
 
-<img width="1389" alt="postmansuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/fea59ffd-7286-4347-87db-a7fd8bae6bf3">
+<img width="1440" alt="postman-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/04e794fd-b915-4fb2-bb2e-3f0b0bae6237">
+
 
 #### Calculate Target Monthly Savings:
 
 A successful calculation of the Target Monthly Savings would be:
 
-<img width="1325" alt="postmansuccess-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/b7590a04-cfff-498f-a103-aae4da824a98">
+<img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/e57453bf-1663-4041-a921-c3645171c269">
+
 
 ### Error Handling
 
