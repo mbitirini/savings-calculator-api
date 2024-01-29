@@ -56,7 +56,6 @@ mutation {
 A successful calculation of Future Value would be:
 <img width="1439" alt="apollo-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/8c22493e-1b3f-49a6-b99b-228af4fb8866">
 
-
 #### Calculate Target Monthly Savings:
 
 ```
@@ -79,7 +78,6 @@ mutation {
 A successful calculation of the Target Monthly Savings would be:
 <img width="1438" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/37913746-13e5-40d2-90c4-8c4d8ce08453">
 
-
 ### Running the Application using Postman
 
 1. Open your Postman application
@@ -101,6 +99,10 @@ A successful calculation of Future Value would be:
 A successful calculation of the Target Monthly Savings would be:
 
 <img width="1325" alt="postmansuccess-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/b7590a04-cfff-498f-a103-aae4da824a98">
+
+### Error Handling
+
+The Savings Calculator API is designed to handle incorrect or missing inputs by providing informative messages.
 
 ### Testing
 
