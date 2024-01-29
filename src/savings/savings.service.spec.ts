@@ -115,7 +115,7 @@ describe('SavingsService', () => {
         currentPotSize: 10000000,
         regularMonthlyAmount: 1000000,
         annualGrowthRate: 1,
-        numberOfYears: 100,
+        numberOfYears: 70,
       };
 
       const result: SavingsModel = service.calculateFutureValue(input);
@@ -210,7 +210,7 @@ describe('SavingsService', () => {
         currentPotSize: 10000000,
         futureValue: 100000000,
         annualGrowthRate: 1,
-        numberOfYears: 100,
+        numberOfYears: 70,
       };
 
       const result: SavingsModel = service.calculateTargetMonthlySavings(input);

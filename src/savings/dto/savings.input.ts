@@ -29,9 +29,9 @@ export class CommonSavingsInput {
     message:
       'Number of compounding periods (years) must be greater than or equal to 1',
   })
-  @Max(100, {
+  @Max(70, {
     message:
-      'Number of compounding periods (years) must be less than or equal to 100',
+      'Number of compounding periods (years) must be less than or equal to 70',
   })
   numberOfYears: number;
 }
