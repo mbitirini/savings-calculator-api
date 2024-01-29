@@ -108,6 +108,23 @@ describe('SavingsService', () => {
       const expectedValue = calculateExpectedFutureValue(input);
       expect(result.futureValue).toBeCloseTo(expectedValue, 2);
     });
+
+    it('should handle maximum input values', () => {
+      // can handle the maximum allowed input values without encountering issues like numeric overflow or other unexpected behavior.
+      const input: CalculateFutureValueInputDto = {
+        currentPotSize: 10000000,
+        regularMonthlyAmount: 1000000,
+        annualGrowthRate: 1,
+        numberOfYears: 100,
+      };
+
+      const result: SavingsModel = service.calculateFutureValue(input);
+
+      // Assert that the result is valid and does not throw errors
+      expect(result).toBeDefined();
+      expect(result.futureValue).not.toBeNaN();
+      expect(result.regularMonthlyAmount).not.toBeNaN();
+    });
   });
 
   describe('calculateTargetMonthlySavings', () => {
@@ -185,6 +202,23 @@ describe('SavingsService', () => {
 
       // Ensure that the regular monthly contribution is 0
       expect(result.regularMonthlyAmount).toBe(0);
+    });
+
+    it('should handle maximum input values for calculateTargetMonthlySavings', () => {
+      // can handle the maximum allowed input values without encountering issues like numeric overflow or other unexpected behavior.
+      const input: TargetMonthlySavingsInputDto = {
+        currentPotSize: 10000000,
+        futureValue: 100000000,
+        annualGrowthRate: 1,
+        numberOfYears: 100,
+      };
+
+      const result: SavingsModel = service.calculateTargetMonthlySavings(input);
+
+      // Assert that the result is valid and does not throw errors
+      expect(result).toBeDefined();
+      expect(result.futureValue).not.toBeNaN();
+      expect(result.regularMonthlyAmount).not.toBeNaN();
     });
   });
 

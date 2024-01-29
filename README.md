@@ -178,7 +178,7 @@ A successful calculation of the Target Monthly Savings would be:
 
 ### Testing
 
-I have implemented unit testing (`savings.service.spec.ts`) for the services, covering various scenarios, including edge cases. Additionally, an end-to-end test (`savings.e2e-spec.ts`) has been included to ensure that the validators used in DTO work as expected.
+I have implemented unit testing (`savings.service.spec.ts`) for the services covering various scenarios, including edge cases (min/max inputs etc). Additionally, an end-to-end test (`savings.e2e-spec.ts`) has been included to ensure that the validators used in DTO work as expected.
 
 In order to run these tests:
 
