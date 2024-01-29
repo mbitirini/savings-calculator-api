@@ -2,6 +2,26 @@
 
 A GraphQL API for calculating the future value of a savings pot and determining the necessary monthly savings to reach a target pot size.
 
+## Project Structure
+
+```
+savings-calculator-api/
+|-- src/
+|   |-- savings/
+|       |-- dto/
+|           |-- savings.input.ts
+|       |-- models/
+|           |-- savings.model.ts
+|       |-- savings.service.ts
+|       |-- savings.service.spec.ts
+|       |-- savings.resolver.ts
+|       |-- savings.module.ts
+|   |-- app.module.ts
+|   |-- main.ts
+|-- test/
+    |-- savings.e2e-spec.ts
+```
+
 ## Installation
 
 1. Clone the repository
@@ -156,10 +176,6 @@ A successful calculation of the Target Monthly Savings would be:
 
 <img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/ae1a9b17-421c-46fd-b458-631814199be4">
 
-### Error Handling
-
-The Savings Calculator API is designed to handle incorrect or missing inputs by providing informative messages. Other edge cases and the way they are approached, are described below in this readme.
-
 ### Testing
 
 I have implemented unit testing (`savings.service.spec.ts`) for the services, covering various scenarios, including edge cases. Additionally, an end-to-end test (`savings.e2e-spec.ts`) has been included to ensure that the validators used in DTO work as expected.
@@ -178,25 +194,9 @@ npm run test
 npm run test:e2e
 ```
 
-## Project Structure
+### Error Handling
 
-```
-savings-calculator-api/
-|-- src/
-|   |-- savings/
-|       |-- dto/
-|           |-- savings.input.ts
-|       |-- models/
-|           |-- savings.model.ts
-|       |-- savings.service.ts
-|       |-- savings.service.spec.ts
-|       |-- savings.resolver.ts
-|       |-- savings.module.ts
-|   |-- app.module.ts
-|   |-- main.ts
-|-- test/
-    |-- savings.e2e-spec.ts
-```
+The Savings Calculator API is designed to handle incorrect or missing inputs (through `class-validator`) by providing informative messages. Other edge cases and the way they are approached, are described in the section below.
 
 ## Technical Decisions
 
