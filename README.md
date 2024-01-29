@@ -87,7 +87,63 @@ A successful calculation of the Target Monthly Savings would be:
 
 - Set the request method to `POST`
 - Set the request URL to http://localhost:3000/graphql.
-- In the request body, select GraphQL and enter the mutation (use the ones I mentioned on `Running the Application using Apollo` part)
+- In the request body, select GraphQL and enter the mutation.
+  You can use the mutations provided above (with the inputs) directly to the query or do the following approach:
+
+Fill in the Query:
+
+```
+mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
+  calculateFutureValue(input: $input) {
+    currentPotSize
+    regularMonthlyAmount
+    annualGrowthRate
+    numberOfYears
+    futureValue
+  }
+}
+
+```
+
+and fill you desired inputs in GraphQL variables on the right side of the screen, for example:
+
+```
+{
+  "input": {
+    "currentPotSize": 1000,
+    "regularMonthlyAmount": 50,
+    "annualGrowthRate": 0.05,
+    "numberOfYears": 5
+  }
+}
+```
+
+Same applies for the second mutation:
+
+```
+mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
+  calculateTargetMonthlySavings(input: $input) {
+    currentPotSize
+    futureValue
+    annualGrowthRate
+    numberOfYears
+    regularMonthlyAmount
+  }
+}
+```
+
+and
+
+```
+{
+  "input": {
+    "currentPotSize": 1000,
+    "futureValue": 10000,
+    "annualGrowthRate": 0.05,
+    "numberOfYears": 5
+  }
+}
+```
 
 3. Click the "Send" button to make the request.
 4. Observe the response in the body of the Postman response panel. The mutations return both `inputs` and `results`. You can further elaborate if needed, but this provides a brief indication of what to expect in the response.
@@ -96,13 +152,11 @@ A successful calculation of Future Value would be:
 
 <img width="1440" alt="postman-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/04e794fd-b915-4fb2-bb2e-3f0b0bae6237">
 
-
 #### Calculate Target Monthly Savings:
 
 A successful calculation of the Target Monthly Savings would be:
 
 <img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/e57453bf-1663-4041-a921-c3645171c269">
-
 
 ### Error Handling
 
