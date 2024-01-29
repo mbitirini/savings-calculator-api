@@ -9,7 +9,7 @@ import { SavingsModel } from './models/savings.model';
 export class SavingsService {
   /**
    * Calculate the future value of a savings pot based on input parameters.
-   * @param input - Input parameters including currentPotSize, regularMonthlyContribution, etc.
+   * @param input - Input parameters including currentPotSize, regularMonthlyAmount, etc.
    * @returns SavingsModel with calculated future value.
    */
   calculateFutureValue(input: CalculateFutureValueInputDto): SavingsModel {
