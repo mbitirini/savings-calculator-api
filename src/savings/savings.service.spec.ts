@@ -172,7 +172,7 @@ describe('SavingsService', () => {
       expect(result.regularMonthlyAmount).toBe(0);
     });
 
-    it('should handle future value equal to current pot size and return 0 contribution', () => {
+    it('should handle future value equal to current pot size and return 0', () => {
       const input: TargetMonthlySavingsInputDto = {
         currentPotSize: 1000,
         futureValue: 1000,
