@@ -25,11 +25,11 @@ npm run start
 
 2. Navigate to http://localhost:3000/graphql to access the GraphQL Playground
 
-3. Write and execute mutations in the left-side editor.
+3. Write and execute mutations in the left-side editor
 
 4. Click the play button to run the mutation
 
-5. Observe the right side of the GraphQL Playground panel. The response includes both the used inputs and the final result
+5. Observe the right side of the GraphQL Playground panel. The mutations return both `inputs` and `results`. You can further elaborate if needed, but this provides a brief indication of what to expect in the response.
 
 Try executing the provided mutations with your desired inputs:
 
@@ -54,7 +54,8 @@ mutation {
 ```
 
 A successful calculation of Future Value would be:
-<img width="1440" alt="playgroundsuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/b6ceb4a5-d115-4658-b17e-a2103f10020d">
+<img width="1439" alt="apollo-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/8c22493e-1b3f-49a6-b99b-228af4fb8866">
+
 
 #### Calculate Target Monthly Savings:
 
@@ -76,7 +77,8 @@ mutation {
 ```
 
 A successful calculation of the Target Monthly Savings would be:
-<img width="1438" alt="playgroundsuccess-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/04076e9b-d5b7-40d7-87b5-35b44660dc98">
+<img width="1438" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/37913746-13e5-40d2-90c4-8c4d8ce08453">
+
 
 ### Running the Application using Postman
 
@@ -88,7 +90,7 @@ A successful calculation of the Target Monthly Savings would be:
 - In the request body, select GraphQL and enter the mutation (use the ones I mentioned on `Running the Application using Apollo` part)
 
 3. Click the "Send" button to make the request.
-4. Observe the response in the body of the Postman response panel. The response includes both the used inputs and the final result.
+4. Observe the response in the body of the Postman response panel. The mutations return both `inputs` and `results`. You can further elaborate if needed, but this provides a brief indication of what to expect in the response.
 
 A successful calculation of Future Value would be:
 
@@ -102,7 +104,7 @@ A successful calculation of the Target Monthly Savings would be:
 
 ### Testing
 
-I have implemented unit testing (`savings.service.spec.ts`) for the services and an end-to-end test (`savings.e2e-spec.ts`) with basic implementation, in order to check that validators used in DTO work as expected.
+I have implemented unit testing (`savings.service.spec.ts`) for the services, covering various scenarios, including edge cases. Additionally, an end-to-end test (`savings.e2e-spec.ts`) has been included to ensure that the validators used in DTO work as expected.
 
 In order to run these tests:
 
