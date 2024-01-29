@@ -152,17 +152,13 @@ A successful calculation of Future Value would be:
 
 <img width="1440" alt="postman-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/c1a525c0-4494-4898-9e80-e1afc2e52c4b">
 
-
-#### Calculate Target Monthly Savings:
-
 A successful calculation of the Target Monthly Savings would be:
 
 <img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/ae1a9b17-421c-46fd-b458-631814199be4">
 
-
 ### Error Handling
 
-The Savings Calculator API is designed to handle incorrect or missing inputs by providing informative messages.
+The Savings Calculator API is designed to handle incorrect or missing inputs by providing informative messages. Other edge cases and the way they are approached, are described below in this readme.
 
 ### Testing
 
