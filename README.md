@@ -25,87 +25,13 @@ npm run start
 
 2. Navigate to http://localhost:3000/graphql to access the GraphQL Playground
 
-3. Write the mutation and the desired inputs on Query variables
+3. Write and execute mutations in the left-side editor.
 
 4. Click the play button to run the mutation
 
-5. Observe the right side of the GraphQL Playground panel
+5. Observe the right side of the GraphQL Playground panel. The response includes both the used inputs and the final result
 
-Try executing the provided mutations :
-
-#### Calculate Future Value:
-
-```
-mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
-  calculateFutureValue(input: $input) {
-    currentPotSize
-    regularMonthlyContribution
-    annualGrowthRate
-    numberOfYears
-    futureValue
-  }
-}
-
-```
-
-and put on Query variables your desired inputs, for example:
-
-```
-{
-  "input": {
-    "currentPotSize": 100000,
-    "regularMonthlyContribution": 3750,
-    "annualGrowthRate": 0.05,
-    "numberOfYears": 1
-  }
-}
-```
-
-A successful calculation of Future Value would be:
-<img width="1440" alt="playgroundsuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/b6ceb4a5-d115-4658-b17e-a2103f10020d">
-
-#### Calculate Target Monthly Savings:
-
-```
-mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
-  calculateTargetMonthlySavings(input: $input) {
-    currentPotSize
-    regularMonthlyContribution
-    annualGrowthRate
-    numberOfYears
-    futureValue
-  }
-}
-```
-
-and put on Query variables your desired inputs, for example:
-
-```
-{
-  "input": {
-    "currentPotSize": 100000,
-    "futureValue": 150000,
-    "annualGrowthRate": 0.05,
-    "numberOfYears": 1
-  }
-}
-```
-
-A successful calculation of the Target Monthly Savings would be:
-<img width="1438" alt="playgroundsuccess-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/04076e9b-d5b7-40d7-87b5-35b44660dc98">
-
-### Running the Application using Postman
-
-1. Open your Postman application
-2. Create a new request:
-
-- Set the request method to `POST`
-- Set the request URL to http://localhost:3000/graphql.
-- In the request body, select GraphQL and enter the mutation
-- Click the Play button
-
-3. Click the "Send" button to make the request.
-4. Observe the response in the body of the Postman response panel.
+Try executing the provided mutations with your desired inputs:
 
 #### Calculate Future Value:
 
@@ -128,8 +54,7 @@ mutation {
 ```
 
 A successful calculation of Future Value would be:
-
-<img width="1389" alt="postmansuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/fea59ffd-7286-4347-87db-a7fd8bae6bf3">
+<img width="1440" alt="playgroundsuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/b6ceb4a5-d115-4658-b17e-a2103f10020d">
 
 #### Calculate Target Monthly Savings:
 
@@ -149,6 +74,27 @@ mutation {
   }
 }
 ```
+
+A successful calculation of the Target Monthly Savings would be:
+<img width="1438" alt="playgroundsuccess-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/04076e9b-d5b7-40d7-87b5-35b44660dc98">
+
+### Running the Application using Postman
+
+1. Open your Postman application
+2. Create a new request:
+
+- Set the request method to `POST`
+- Set the request URL to http://localhost:3000/graphql.
+- In the request body, select GraphQL and enter the mutation (use the ones I mentioned on `Running the Application using Apollo` part)
+
+3. Click the "Send" button to make the request.
+4. Observe the response in the body of the Postman response panel. The response includes both the used inputs and the final result.
+
+A successful calculation of Future Value would be:
+
+<img width="1389" alt="postmansuccess-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/fea59ffd-7286-4347-87db-a7fd8bae6bf3">
+
+#### Calculate Target Monthly Savings:
 
 A successful calculation of the Target Monthly Savings would be:
 
