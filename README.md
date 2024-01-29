@@ -88,9 +88,9 @@ A successful calculation of the Target Monthly Savings would be:
 - Set the request method to `POST`
 - Set the request URL to http://localhost:3000/graphql.
 - In the request body, select GraphQL and enter the mutation.
-  You can use the mutations provided above (with the inputs) directly to the query or do the following approach:
+  You can use the mutations provided above (with the inputs) directly to the `Query` area or do the following approach:
 
-Fill in the Query:
+Fill in the `Query`:
 
 ```
 mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
@@ -105,7 +105,7 @@ mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
 
 ```
 
-and fill you desired inputs in GraphQL variables on the right side of the screen, for example:
+and fill you desired inputs in `GraphQL variables` on the right side of the screen, for example:
 
 ```
 {
@@ -150,13 +150,15 @@ and
 
 A successful calculation of Future Value would be:
 
-<img width="1440" alt="postman-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/04e794fd-b915-4fb2-bb2e-3f0b0bae6237">
+<img width="1440" alt="postman-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/c1a525c0-4494-4898-9e80-e1afc2e52c4b">
+
 
 #### Calculate Target Monthly Savings:
 
 A successful calculation of the Target Monthly Savings would be:
 
-<img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/e57453bf-1663-4041-a921-c3645171c269">
+<img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/ae1a9b17-421c-46fd-b458-631814199be4">
+
 
 ### Error Handling
 
