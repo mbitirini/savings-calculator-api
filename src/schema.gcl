@@ -6,7 +6,7 @@ type SavingsModel {
   currentPotSize: Float!
   annualGrowthRate: Float!
   numberOfYears: Int!
-  regularMonthlyContribution: Float!
+  regularMonthlyAmount: Float!
   futureValue: Float!
 }
 
@@ -23,7 +23,7 @@ input CalculateFutureValueInputDto {
   currentPotSize: Float!
   annualGrowthRate: Float!
   numberOfYears: Int!
-  regularMonthlyContribution: Float!
+  regularMonthlyAmount: Float!
 }
 
 input TargetMonthlySavingsInputDto {

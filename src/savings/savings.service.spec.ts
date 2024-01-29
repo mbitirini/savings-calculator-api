@@ -12,7 +12,7 @@ const calculateExpectedFutureValue = (
 ): number => {
   const {
     currentPotSize,
-    regularMonthlyContribution,
+    regularMonthlyAmount,
     annualGrowthRate,
     numberOfYears,
   } = input;
@@ -20,7 +20,7 @@ const calculateExpectedFutureValue = (
   // Compound Interest Formula: FV = C * (1 + i)^t + Pmt * 12 * (((1 + i)^t) - 1) / i
   const expectedValue =
     currentPotSize * Math.pow(1 + annualGrowthRate, numberOfYears) +
-    regularMonthlyContribution *
+    regularMonthlyAmount *
       12 *
       ((Math.pow(1 + annualGrowthRate, numberOfYears) - 1) / annualGrowthRate);
 
@@ -62,7 +62,7 @@ describe('SavingsService', () => {
     it('should handle minimum input values', () => {
       const input: CalculateFutureValueInputDto = {
         currentPotSize: 0,
-        regularMonthlyContribution: 0,
+        regularMonthlyAmount: 0,
         annualGrowthRate: 0,
         numberOfYears: 1,
       };
@@ -74,7 +74,7 @@ describe('SavingsService', () => {
     it('should handle annual growth rate being 0', () => {
       const input: CalculateFutureValueInputDto = {
         currentPotSize: 0,
-        regularMonthlyContribution: 10,
+        regularMonthlyAmount: 10,
         annualGrowthRate: 0,
         numberOfYears: 2,
       };
@@ -86,7 +86,7 @@ describe('SavingsService', () => {
     it('should handle annual growth rate being 0 with zero monthly contribution', () => {
       const input: CalculateFutureValueInputDto = {
         currentPotSize: 500,
-        regularMonthlyContribution: 0,
+        regularMonthlyAmount: 0,
         annualGrowthRate: 0,
         numberOfYears: 8,
       };
@@ -99,7 +99,7 @@ describe('SavingsService', () => {
     it('should calculate future value correctly', () => {
       const input: CalculateFutureValueInputDto = {
         currentPotSize: 100,
-        regularMonthlyContribution: 100,
+        regularMonthlyAmount: 100,
         annualGrowthRate: 0.05,
         numberOfYears: 10,
       };
@@ -120,7 +120,7 @@ describe('SavingsService', () => {
       };
 
       const result = service.calculateTargetMonthlySavings(input);
-      expect(result.regularMonthlyContribution).toBe(0);
+      expect(result.regularMonthlyAmount).toBe(0);
     });
 
     it('should handle annual growth rate being 0', () => {
@@ -132,7 +132,7 @@ describe('SavingsService', () => {
       };
 
       const result = service.calculateTargetMonthlySavings(input);
-      expect(result.regularMonthlyContribution).toBe(10);
+      expect(result.regularMonthlyAmount).toBe(10);
     });
 
     it('should calculate regular monthly contribution correctly', () => {
@@ -145,7 +145,7 @@ describe('SavingsService', () => {
 
       const result: SavingsModel = service.calculateTargetMonthlySavings(input);
       const expectedResult = calculateExpectedTargetMonthlySavings(input);
-      expect(result.regularMonthlyContribution).toBe(expectedResult);
+      expect(result.regularMonthlyAmount).toBe(expectedResult);
     });
 
     it('should handle future value smaller than current pot size', () => {
@@ -157,7 +157,7 @@ describe('SavingsService', () => {
       };
 
       const result: SavingsModel = service.calculateTargetMonthlySavings(input);
-      expect(result.regularMonthlyContribution).toBe(0);
+      expect(result.regularMonthlyAmount).toBe(0);
     });
 
     it('should handle negative regular monthly contribution and return 0', () => {
@@ -169,7 +169,7 @@ describe('SavingsService', () => {
       };
 
       const result: SavingsModel = service.calculateTargetMonthlySavings(input);
-      expect(result.regularMonthlyContribution).toBe(0);
+      expect(result.regularMonthlyAmount).toBe(0);
     });
 
     it('should handle future value equal to current pot size and return 0 contribution', () => {
@@ -184,7 +184,7 @@ describe('SavingsService', () => {
       const result: SavingsModel = service.calculateTargetMonthlySavings(input);
 
       // Ensure that the regular monthly contribution is 0
-      expect(result.regularMonthlyContribution).toBe(0);
+      expect(result.regularMonthlyAmount).toBe(0);
     });
   });
 

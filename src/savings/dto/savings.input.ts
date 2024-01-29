@@ -49,15 +49,15 @@ export class CalculateFutureValueInputDto extends CommonSavingsInput {
   @IsNotEmpty()
   @IsNumber(
     { allowInfinity: false, allowNaN: false },
-    { message: 'Monthly contribution must be a number' },
+    { message: 'Monthly amount must be a number' },
   )
   @Min(0, {
-    message: 'Monthly contribution must be greater than or equal to 0',
+    message: 'Monthly amount must be greater than or equal to 0',
   })
   @Max(1000000, {
-    message: 'Monthly contribution must be less than or equal to 1000000',
+    message: 'Monthly amount must be less than or equal to 1000000',
   })
-  regularMonthlyContribution: number;
+  regularMonthlyAmount: number;
 }
 
 @InputType()

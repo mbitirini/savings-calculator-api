@@ -25,12 +25,12 @@ describe('SavingsController (e2e)', () => {
           mutation {
             calculateFutureValue(input: {
               currentPotSize: -1000,
-              regularMonthlyContribution: 50,
+              regularMonthlyAmount: 50,
               annualGrowthRate: 1.5,
               numberOfYears: 5
             }) {
               currentPotSize,
-              regularMonthlyContribution,
+              regularMonthlyAmount,
               annualGrowthRate,
               numberOfYears,
               futureValue
@@ -65,12 +65,12 @@ describe('SavingsController (e2e)', () => {
           mutation {
             calculateFutureValue(input: {
               currentPotSize: 100000,
-              regularMonthlyContribution: 3750,
+              regularMonthlyAmount: 3750,
               annualGrowthRate: 0.05,
               numberOfYears: 1
             }) {
               currentPotSize,
-              regularMonthlyContribution,
+              regularMonthlyAmount,
               annualGrowthRate,
               numberOfYears,
               futureValue
@@ -105,7 +105,7 @@ describe('SavingsController (e2e)', () => {
               futureValue,
               annualGrowthRate,
               numberOfYears,
-              regularMonthlyContribution
+              regularMonthlyAmount
             }
           }
         `,
@@ -115,7 +115,7 @@ describe('SavingsController (e2e)', () => {
         expect(body.data).toBeDefined();
         expect(body.data.calculateTargetMonthlySavings).toBeDefined();
         expect(
-          body.data.calculateTargetMonthlySavings.regularMonthlyContribution,
+          body.data.calculateTargetMonthlySavings.regularMonthlyAmount,
         ).toBeCloseTo(3750, 2);
       });
   });

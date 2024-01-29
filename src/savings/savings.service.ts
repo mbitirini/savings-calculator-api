@@ -15,7 +15,7 @@ export class SavingsService {
   calculateFutureValue(input: CalculateFutureValueInputDto): SavingsModel {
     const {
       currentPotSize,
-      regularMonthlyContribution,
+      regularMonthlyAmount,
       annualGrowthRate,
       numberOfYears,
     } = input;
@@ -26,9 +26,9 @@ export class SavingsService {
     // Formula: FV = C * (1 + i) ^ t + Pmt * 12 * (((1 + i) ^ t) - 1) / i
     const futureValue: number =
       annualGrowthRate === 0
-        ? currentPotSize + regularMonthlyContribution * 12 * numberOfYears
+        ? currentPotSize + regularMonthlyAmount * 12 * numberOfYears
         : currentPotSize * Math.pow(1 + annualGrowthRate, numberOfYears) +
-          regularMonthlyContribution *
+          regularMonthlyAmount *
             12 *
             ((Math.pow(1 + annualGrowthRate, numberOfYears) - 1) /
               annualGrowthRate);
@@ -49,7 +49,7 @@ export class SavingsService {
 
     if (futureValue <= currentPotSize) {
       // Goal is already achieved, no additional contributions needed
-      return { ...input, regularMonthlyContribution: 0 };
+      return { ...input, regularMonthlyAmount: 0 };
     }
 
     // When annual growth rate is 0, the monthly savings
@@ -57,7 +57,7 @@ export class SavingsService {
     // divided by the total number of months.
     // If annual growth rate > 0 then use the formula as expected
     // Formula: Pmt = (FV - C * (1 + i) ^ t) / (12 * (((1 + i) ^ t - 1) / i))
-    let regularMonthlyContribution: number =
+    let regularMonthlyAmount: number =
       annualGrowthRate === 0
         ? (futureValue - currentPotSize) / (12 * numberOfYears)
         : (futureValue -
@@ -67,9 +67,8 @@ export class SavingsService {
               annualGrowthRate));
 
     // Ensure regularMonthlyContribution is not negative
-    regularMonthlyContribution =
-      regularMonthlyContribution < 0 ? 0 : regularMonthlyContribution;
+    regularMonthlyAmount = regularMonthlyAmount < 0 ? 0 : regularMonthlyAmount;
 
-    return { ...input, regularMonthlyContribution };
+    return { ...input, regularMonthlyAmount };
   }
 }

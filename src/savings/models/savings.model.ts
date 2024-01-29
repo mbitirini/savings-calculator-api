@@ -12,7 +12,7 @@ export class SavingsModel {
   numberOfYears: number;
 
   @Field(() => Float)
-  regularMonthlyContribution: number;
+  regularMonthlyAmount: number;
 
   @Field(() => Float)
   futureValue: number;

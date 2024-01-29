@@ -39,12 +39,12 @@ Try executing the provided mutations with your desired inputs:
 mutation {
   calculateFutureValue(input: {
     currentPotSize: 1000,
-    regularMonthlyContribution: 50,
+    regularMonthlyAmount: 50,
     annualGrowthRate: 0.05,
     numberOfYears: 5
   }) {
     currentPotSize,
-    regularMonthlyContribution,
+    regularMonthlyAmount,
     annualGrowthRate,
     numberOfYears,
     futureValue
@@ -62,7 +62,7 @@ A successful calculation of Future Value would be:
 mutation {
   calculateTargetMonthlySavings(input: {
     currentPotSize: 1000,
-    futureValue: 1500,
+    futureValue: 15000,
     annualGrowthRate: 0.03,
     numberOfYears: 5
   }) {
@@ -70,7 +70,7 @@ mutation {
     futureValue,
     annualGrowthRate,
     numberOfYears,
-    regularMonthlyContribution
+    regularMonthlyAmount
   }
 }
 ```
@@ -149,7 +149,7 @@ In order to complete this task though, I took roughly these decisions:
 
 ### Input Types and Value Limits
 
-- Used `Float` type for `currentPotSize`, `regularMonthlyContribution`, `futureValue` and `annualGrowthRate`. `Int` type is used for `numberOfYears`
+- Used `Float` type for `currentPotSize`, `regularMonthlyAmount`, `futureValue` and `annualGrowthRate`. `Int` type is used for `numberOfYears`
 - The selected input value limits for the variables have been chosen to accommodate a broad range of financial scenarios while preventing extreme or unrealistic values.
 
 ### Handling edge cases
@@ -161,13 +161,13 @@ When annual growth rate is 0, there is a risk of having a NaN (since we divide w
 - The future value is the sum of the initial pot size and total contributions over the years
 
 ```
-futureValue = currentPotSize + regularMonthlyContribution * 12 * numberOfYears
+futureValue = currentPotSize + regularMonthlyAmount * 12 * numberOfYears
 ```
 
 - The monthly savings is the difference between future value and current pot size, divided by the total number of months
 
 ```
-regularMonthlyContribution = (futureValue - currentPotSize) / (12 * numberOfYears)
+regularMonthlyAmount = (futureValue - currentPotSize) / (12 * numberOfYears)
 ```
 
 #### 2. Negative Result in Monthly Savings Amount
@@ -185,7 +185,7 @@ In the scope of this API, I decided that the implementation ensures that a negat
 Again in the case of calculating the monthly savings target,
 some online calculators don't have a special way to handle this exception.
 
-In the scope of this API, I decided that if the Future Value is bigger or equal than Current Pot Size then the goal is achieved so the regular monthly contributions needed are zero.
+In the scope of this API, I decided that if the Future Value is bigger or equal than Current Pot Size then the goal is achieved so the regular monthly amount needed is zero.
 
 #### 4. Rounding in Financial Calculations
 
