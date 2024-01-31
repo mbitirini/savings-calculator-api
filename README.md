@@ -236,22 +236,24 @@ I checked that some calculators online return the negative result, while others 
 
 Typically, when calculating the necessary monthly savings, you would expect a positive value indicating the amount you need to contribute regularly to achieve the specified future value (at least I have this idea, I'm not so aware of economical terms - yet :P)
 
--> In the scope of this API, I decided that the implementation ensures that a negative result is treated as zero.
+&rarr; In the scope of this API, I decided that the implementation ensures that a negative result is treated as zero.
 
 #### 3. Future Value is bigger or equal than Current Pot Size
 
 Again in the case of calculating the monthly savings target,
 some online calculators don't have a special way to handle this exception.
 
-In the scope of this API, I decided that if the Future Value is bigger or equal than Current Pot Size then the goal is achieved so the regular monthly amount needed is zero.
+&rarr; In the scope of this API, I decided that if the Future Value is bigger or equal than Current Pot Size then the goal is achieved so the regular monthly amount needed is zero.
 
 #### 4. Rounding in Financial Calculations
 
-The application does not round the calculated values. The API returns precise results for calculations, prioritizing accuracy.
+The application does not round the calculated values. 
+
+&rarr; The API returns precise results for calculations, prioritizing accuracy.
 
 #### 5. Error handling for incorrect variable types or inputs
 
-`class-validator` is used extensively in the DTO in order to ensure that the inputs have the valid type and are in the allowed range. If you try to put wrong type, value out of range or omit to put a variable necessary for this certain service, then an Error is thrown.
+`class-validator` in collaboration with GraphQL and its field checks, ensures that inputs have valid types and fall within the allowed range. If you attempt to assign a value of the wrong type, exceed the defined range or omit a necessary variable for a specific service, an error is thrown to maintain data integrity and consistency.
 
 ## Notes
 
