@@ -51,31 +51,9 @@ npm run start
 
 5. Observe the right side of the GraphQL Playground panel. The mutations return both `inputs` and `results`. You can further elaborate if needed, but this provides a brief indication of what to expect in the response.
 
-Try executing the provided mutations with your desired inputs:
+Try executing the provided mutations with your desired inputs.
 
-#### Calculate Future Value:
-
-Option 1:
-
-```
-mutation {
-  calculateFutureValue(input: {
-    currentPotSize: 1000,
-    regularMonthlyAmount: 50,
-    annualGrowthRate: 0.05,
-    numberOfYears: 5
-  }) {
-    currentPotSize,
-    regularMonthlyAmount,
-    annualGrowthRate,
-    numberOfYears,
-    futureValue
-  }
-}
-
-```
-
-Option 2:
+#### Calculate Future Value
 
 ```
 mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
@@ -87,49 +65,24 @@ mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
     futureValue
   }
 }
-
 ```
 
-and fill you desired inputs in `Query variables` below of the editor, for example:
-
+Fill your desired inputs in the `Query variables` section.
 ```
 {
   "input": {
     "currentPotSize": 1000,
     "regularMonthlyAmount": 50,
-    "annualGrowthRate": 0.05,
+    "annualGrowthRate": 0.03,
     "numberOfYears": 5
   }
 }
 ```
+<img width="1433" alt="option2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/306f7776-d5ab-4ddc-b5d3-5787ae4e8f4d">
 
-A successful calculation of Future Value would be:
 
-<img width="1440" alt="apollo-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/795377bd-49db-49fc-8896-2b63e8f012ac">
 
-#### Calculate Target Monthly Savings:
-
-Option 1:
-
-```
-mutation {
-  calculateTargetMonthlySavings(input: {
-    currentPotSize: 1000,
-    futureValue: 15000,
-    annualGrowthRate: 0.03,
-    numberOfYears: 5
-  }) {
-    currentPotSize,
-    futureValue,
-    annualGrowthRate,
-    numberOfYears,
-    regularMonthlyAmount
-  }
-}
-```
-
-Option 2:
-
+#### Calculate Target Monthly Savings
 ```
 mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
   calculateTargetMonthlySavings(input: $input) {
@@ -142,22 +95,19 @@ mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
 }
 ```
 
-and fill you desired inputs in `Query variables` below of the editor, for example:
-
+Fill your desired inputs in the Query variables section
 ```
 {
   "input": {
     "currentPotSize": 1000,
-    "futureValue": 10000,
-    "annualGrowthRate": 0.05,
+    "futureValue": 15000,
+    "annualGrowthRate": 0.03,
     "numberOfYears": 5
   }
 }
 ```
+<img width="1437" alt="option2-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/d32ea1d9-c483-46bb-bab8-8be7edafdc11">
 
-A successful calculation of the Target Monthly Savings would be:
-
-<img width="1434" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/2509b370-0821-4cdc-acdf-7f4cb5808ad9">
 
 ### Testing
 
