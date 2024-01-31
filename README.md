@@ -198,7 +198,7 @@ npm run test:e2e
 
 ### Error Handling
 
-The Savings Calculator API is designed to handle incorrect or missing inputs (through `class-validator`) by providing informative messages. Other edge cases and the way they are approached, are described in the section below.
+The Savings Calculator API is designed to handle incorrect or missing inputs by providing informative messages. Other edge cases and the way they are approached, are described in the section below.
 
 ## Technical Decisions
 
