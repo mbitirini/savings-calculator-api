@@ -234,7 +234,7 @@ In some edge cases, when the
 monthly savings target is calculated the result is negative.
 I checked that some calculators online return the negative result, while others return 0 (like this [one](https://moneysmart.gov.au/saving/savings-goals-calculator#!focus=1))
 
-Typically, when calculating the necessary monthly savings, you would expect a positive value indicating the amount you need to contribute regularly to achieve the specified future value (at least I have this idea, I'm not so aware of economical terms :P)
+Typically, when calculating the necessary monthly savings, you would expect a positive value indicating the amount you need to contribute regularly to achieve the specified future value (at least I have this idea, I'm not so aware of economical terms - yet :P)
 
 In the scope of this API, I decided that the implementation ensures that a negative result is treated as zero.
 
