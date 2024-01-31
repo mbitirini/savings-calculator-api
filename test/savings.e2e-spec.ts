@@ -57,6 +57,42 @@ describe('SavingsController (e2e)', () => {
       });
   });
 
+  it('should return error for incorrect variable type', () => {
+    return request(app.getHttpServer())
+      .post('/graphql')
+      .send({
+        query: `
+          mutation {
+            calculateFutureValue(input: {
+              currentPotSize: "invalid",
+              regularMonthlyAmount: 50,
+              annualGrowthRate: 0.05,
+              numberOfYears: 5
+            }) {
+              currentPotSize,
+              regularMonthlyAmount,
+              annualGrowthRate,
+              numberOfYears,
+              futureValue
+            }
+          }
+        `,
+      })
+      .expect((response) => {
+        expect(response.body.errors).toBeDefined();
+
+        if (response.body.errors[0]) {
+          expect(response.body.errors[0].message).toContain(
+            'Float cannot represent non numeric value: "invalid"',
+          );
+        } else {
+          console.error('No error message found:', response.body.errors);
+        }
+
+        expect(response.body.data).toBeUndefined();
+      });
+  });
+
   it('should successfully calculate future value for valid input', () => {
     return request(app.getHttpServer())
       .post('/graphql')
