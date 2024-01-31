@@ -51,8 +51,6 @@ npm run start
 
 5. Observe the right side of the GraphQL Playground panel. The mutations return both `inputs` and `results`. You can further elaborate if needed, but this provides a brief indication of what to expect in the response.
 
-Try executing the provided mutations with your desired inputs.
-
 #### Calculate Future Value
 
 ```
