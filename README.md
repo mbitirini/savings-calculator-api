@@ -178,9 +178,9 @@ A successful calculation of the Target Monthly Savings would be:
 
 ### Testing
 
-I have implemented unit testing (`savings.service.spec.ts`) for the services covering various scenarios, including edge cases (min/max inputs etc). Certainly! Here's a more concise version:
+I have implemented unit testing (`savings.service.spec.ts`) for the services covering various scenarios, including edge cases, min/max inputs etc.
 
-Included an end-to-end test (`savings.e2e-spec.ts`) to ensure proper enforcement of min/max values through DTO validators and GraphQL functionalities coverage, verifying that input type mismatches result in appropriate error messages. While this test covers some key cases, it is not exhaustively cover all possible scenarios, just did it for a quick check for now. In a real life application this would be handled in detail :)
+Included also an end-to-end test (`savings.e2e-spec.ts`) to ensure proper enforcement of min/max values through DTO validators and GraphQL functionalities coverage, verifying that input type mismatches result in appropriate error messages. (While this test covers some key cases, it is not exhaustively cover all possible scenarios, just did it for a quick check for now. In a real life application this would be handled in detail 😊)
 
 In order to run these tests:
 
