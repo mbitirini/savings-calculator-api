@@ -145,7 +145,7 @@ In order to complete this task though, I took roughly these decisions:
 
 #### 1. Annual Growth Rate is 0
 
-When annual growth rate is 0, there is a risk of having a NaN (since we divide with 0). In order to handle this:
+When annual growth rate is 0, there is a risk of having a NaN (since we divide with 0). So when this happens, formula changes to prevent undesirable results:
 
 - The future value is the sum of the initial pot size and total contributions over the years
 
@@ -167,7 +167,9 @@ I checked that some calculators online return the negative result, while others 
 
 Typically, when calculating the necessary monthly savings, you would expect a positive value indicating the amount you need to contribute regularly to achieve the specified future value (at least I have this idea, I'm not so aware of economical terms - yet :P)
 
-&rarr; In the scope of this API, I decided that the implementation ensures that a negative result is treated as zero.
+&rarr; In the scope of this API, I decided that the implementation ensures that a negative result is treated as zero. 
+
+Of course, as I mentioned in the start this should be a decision taken within the team.
 
 #### 3. Future Value is bigger or equal than Current Pot Size
 
