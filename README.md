@@ -55,6 +55,8 @@ Try executing the provided mutations with your desired inputs:
 
 #### Calculate Future Value:
 
+Option 1:
+
 ```
 mutation {
   calculateFutureValue(input: {
@@ -73,11 +75,41 @@ mutation {
 
 ```
 
+Option 2:
+
+```
+mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
+  calculateFutureValue(input: $input) {
+    currentPotSize
+    regularMonthlyAmount
+    annualGrowthRate
+    numberOfYears
+    futureValue
+  }
+}
+
+```
+
+and fill you desired inputs in `Query variables` below of the editor, for example:
+
+```
+{
+  "input": {
+    "currentPotSize": 1000,
+    "regularMonthlyAmount": 50,
+    "annualGrowthRate": 0.05,
+    "numberOfYears": 5
+  }
+}
+```
+
 A successful calculation of Future Value would be:
 
 <img width="1440" alt="apollo-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/795377bd-49db-49fc-8896-2b63e8f012ac">
 
 #### Calculate Target Monthly Savings:
+
+Option 1:
 
 ```
 mutation {
@@ -96,49 +128,7 @@ mutation {
 }
 ```
 
-A successful calculation of the Target Monthly Savings would be:
-
-<img width="1434" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/2509b370-0821-4cdc-acdf-7f4cb5808ad9">
-
-### Running the Application using Postman
-
-1. Open your Postman application
-2. Create a new request:
-
-- Set the request method to `POST`
-- Set the request URL to http://localhost:3000/graphql.
-- In the request body, select GraphQL and enter the mutation.
-  You can use the mutations provided above (with the inputs) directly to the `Query` area or do the following approach:
-
-Fill in the `Query`:
-
-```
-mutation CalculateFutureValue($input: CalculateFutureValueInputDto!) {
-  calculateFutureValue(input: $input) {
-    currentPotSize
-    regularMonthlyAmount
-    annualGrowthRate
-    numberOfYears
-    futureValue
-  }
-}
-
-```
-
-and fill you desired inputs in `GraphQL variables` on the right side of the screen, for example:
-
-```
-{
-  "input": {
-    "currentPotSize": 1000,
-    "regularMonthlyAmount": 50,
-    "annualGrowthRate": 0.05,
-    "numberOfYears": 5
-  }
-}
-```
-
-Same applies for the second mutation:
+Option 2:
 
 ```
 mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
@@ -152,7 +142,7 @@ mutation CalculateTargetMonthlySavings($input: TargetMonthlySavingsInputDto!) {
 }
 ```
 
-and
+and fill you desired inputs in `Query variables` below of the editor, for example:
 
 ```
 {
@@ -165,16 +155,9 @@ and
 }
 ```
 
-3. Click the "Send" button to make the request.
-4. Observe the response in the body of the Postman response panel. The mutations return both `inputs` and `results`. You can further elaborate if needed, but this provides a brief indication of what to expect in the response.
-
-A successful calculation of Future Value would be:
-
-<img width="1440" alt="postman-1" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/c1a525c0-4494-4898-9e80-e1afc2e52c4b">
-
 A successful calculation of the Target Monthly Savings would be:
 
-<img width="1440" alt="postman-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/ae1a9b17-421c-46fd-b458-631814199be4">
+<img width="1434" alt="apollo-2" src="https://github.com/mbitirini/savings-calculator-api/assets/69593342/2509b370-0821-4cdc-acdf-7f4cb5808ad9">
 
 ### Testing
 
@@ -247,7 +230,7 @@ some online calculators don't have a special way to handle this exception.
 
 #### 4. Rounding in Financial Calculations
 
-The application does not round the calculated values. 
+The application does not round the calculated values.
 
 &rarr; The API returns precise results for calculations, prioritizing accuracy.
 
